@@ -1,0 +1,72 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    min-height: 100vh;
+    margin: 0;
+    margin-top: 75px;
+    background: #929AA2;
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+  
+  }
+  .container{
+    display: flex;
+    width:70vw;
+  }
+  .imgbx{
+    position: relative;
+    height: 80vh;
+    color:#fff;
+    border-radius: 30px;
+    flex:0.5;
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: flex 0.7s ease-out;
+  }
+  .imgbx:nth-child(1){
+    background: url(images/articles/IMG_2433.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .imgbx:nth-child(2){
+    background: url(images/articles/IMG_2352.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .imgbx:nth-child(3){
+    background: url(images/articles/IMG_2428.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .imgbx:nth-child(4){
+    background: url(images/articles/IMG_2432.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .imgbx img{
+    position: absolute;
+    bottom: 8px;
+    left:7.4px;
+    width: 50px;
+    height: 50px;
+  }
+  .imgbx h1{
+    position: absolute;
+    bottom: 15px;
+    font-size: 20px;
+    left: 80px;
+   margin: 0;
+   text-transform: capitalize;
+   opacity: 0;
+  }
+  .imgbx.active{
+    flex: 5;
+  }
+  .imgbx.active h1{
+    opacity: 1;
+    transition: opacity o.3s ease-out o.4s;
+  
+  }

@@ -1,0 +1,170 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}interface{% endblock %}
+
+
+{% block stylesheets %}
+<link rel="stylesheet" href="https://bootswatch.com/5/cerulean/bootstrap.css">
+<link href="{{ asset('css/interface.css') }}" rel="stylesheet"  >
+{% endblock %}
+
+
+{% block body %}
+<style>
+    body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    min-height: 100vh;
+    margin: 0;
+    margin-top: 75px;
+    background: #929AA2;
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+  
+  }
+ 
+  .container1{
+    display: flex;
+    width:70vw;
+    margin-bottom: 100px;
+
+   
+  }
+  .imgbx{
+    position: relative;
+    height: 80vh;
+    color:blanchedalmond;
+    border-radius: 30px;
+    flex:0.5;
+    margin: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: flex 0.7s ease-out;
+  }
+  .imgbx:nth-child(1){
+    background: url(images/articles/IMG_2611.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .imgbx:nth-child(2){
+    background: url(images/articles/IMG_2620.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .imgbx:nth-child(3){
+    background: url(images/articles/IMG_2614.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .imgbx:nth-child(4){
+    background: url(images/articles/IMG_2618.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .imgbx img{
+    display:none;
+  }
+  .imgbx p{
+    position: absolute;
+    bottom: 25px;
+    font-size: 20px;
+    left: 80px;
+    margin: 0;
+    text-transform: capitalize;
+    opacity: 0;
+  }
+  .imgbx h3{
+
+   font-size: 35px;
+   text-align:center;
+   color:blanchedalmond;
+   margin-top: 10px;
+
+  }
+  .imgbx.active{
+    flex: 5;
+  }
+  .imgbx.active p{
+    opacity: 1;
+    transition: opacity o.3s ease-out o.4s;
+  
+  }
+  
+</style>
+
+<body>
+  
+    <div class="container1">
+     
+        <div class="imgbx active">
+            <img src="{{ asset('images/articles/IMG_2611.jpg') }}" alt="">
+            <h3>Bienvenue Dans GlobeNature</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi
+             doloribus at odio quam placeat autem, quae illum explicabo facilis et molestias 
+             aspernatur aperiam dignissimos sit esse quaerat necessitatibus officia!Lorem, 
+             ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi doloribus at 
+             odio quam placeat autem, quae illum explicabo facilis et molestias aspernatur
+              aperiam dignissimos sit esse quaerat necessitatibus officia!Lorem, ipsum dolor 
+              sit amet consectetur adipisicing elit. Eaque eligendi doloribus at odio quam 
+              placeat autem, quae illum explicabo facilis et molestias Lorem, ipsum dolor sit amet.</p>
+        </div>
+        <div class="imgbx">
+            <img src="{{ asset('images/articles/IMG_2620.jpg') }}" alt="">
+            <h3>Rester en Contact avec la Nature</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi 
+              doloribus at odio quam placeat autem, quae illum explicabo facilis et molestias 
+              aspernatur aperiam dignissimos sit esse quaerat necessitatibus officia!Lorem, 
+              ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi doloribus 
+              at odio quam placeat autem, quae illum explicabo facilis et molestias aspernatur 
+              aperiam dignissimos sit esse quaerat necessitatibus officia!Lorem, ipsum dolor sit
+               amet consectetur adipisicing elit. Eaque eligendi doloribus at odio quam placeat 
+               autem, quae illum explicabo facilis et molestias Lorem, ipsum dolor sit amet.</p>
+        </div>
+        <div class="imgbx">
+            <img src="{{ asset('images/articles/IMG_2614.jpg') }}" alt="">
+            <h3>Nos Articles</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi doloribus
+              at odio quam placeat autem, quae illum explicabo facilis et molestias aspernatur 
+              aperiam dignissimos sit esse quaerat necessitatibus officia!Lorem, ipsum dolor sit 
+              amet consectetur adipisicing elit. Eaque eligendi doloribus at odio quam placeat 
+              autem, quae illum explicabo facilis et molestias aspernatur aperiam dignissimos 
+              sit esse quaerat necessitatibus officia!Lorem, ipsum dolor sit amet consectetur 
+              adipisicing elit. Eaque eligendi doloribus at odio quam placeat autem, quae illum 
+              explicabo facilis et molestias Lorem, ipsum dolor sit amet.</p>
+        </div>
+        <div class="imgbx">
+            <img src="{{ asset('images/articles/IMG_2618.jpg') }}" alt="">
+            <h3>Nous Contacter</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque eligendi doloribus 
+              at odio quam placeat autem, quae illum explicabo facilis et molestias aspernatur 
+              aperiam dignissimos sit esse quaerat necessitatibus officia!Lorem, ipsum dolor 
+              sit amet consectetur adipisicing elit. Eaque eligendi doloribus at odio quam placeat 
+              autem, quae illum explicabo facilis et molestias aspernatur aperiam dignissimos sit 
+              esse quaerat necessitatibus officia!Lorem, ipsum dolor sit amet consectetur adipisicing 
+              elit. Eaque eligendi doloribus at odio quam placeat autem, quae illum explicabo facilis
+               et molestias Lorem, ipsum dolor sit amet. </p>
+        </div>
+    
+    </div>
+  
+    <script>
+        const imgbx = document.querySelectorAll('.imgbx');
+        imgbx.forEach((imgbx =>{
+            imgbx.addEventListener('click', () => {
+                removeActiveClass();
+                imgbx.classList.add('active');
+            });
+        }));
+
+        function removeActiveClass() {
+           imgbx.forEach(imgbx=> {
+             imgbx.classList.remove('active');
+           }); 
+        }
+    </script>
+
+</body>
+
+{% endblock %} 

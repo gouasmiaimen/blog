@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}Rédige ton Article{% endblock %}
+
+{% block body %}
+<style>
+    body{
+   background-color: #929AA2;
+   width: 100%;
+    margin: 0; 
+   }
+  
+   h1{
+       color: #3A5154;
+       margin-top: 70px;
+   }
+
+</style>
+<h1>rédiges un article</h1>
+
+{{form_start(form)}}
+{{form_widget(form)}}
+
+<button class="btn mt-2" style="background-color: #B7673C">envoyer</button>
+
+{{form_end(form)}}
+
+{% endblock  %}

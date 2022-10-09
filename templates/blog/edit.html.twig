@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% form_theme editform 'bootstrap_5_layout.html.twig' %}
+{% block title %}modification{% endblock %}
+
+{% block body %}
+<style>
+     body{
+    background-color: #929AA2;
+    width: 100%;
+     margin: 0; 
+    }
+   
+    h1{
+        color: #3A5154;
+        margin-top: 70px;
+    }
+    
+</style>
+
+    <h1>Modifier l'Article</h1>
+   
+    {{ form_start(editform) }}
+    {{ form_widget(editform) }}
+        <button class="btn  mt-3" style="background-color: #B7673C" >modifier</button>
+       
+    {{ form_end(editform) }}
+</form>
+
+{% endblock %}
